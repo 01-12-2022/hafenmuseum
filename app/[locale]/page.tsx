@@ -13,8 +13,6 @@ export default async function Home({ params: { locale } }: { params: any }) {
       locale={locale}
       resources={resources}>
       <main>
-        <h1>{t('test')}</h1>
-
         <MuseumLandingPageComponent />
       </main>
     </TranslationsProvider>
