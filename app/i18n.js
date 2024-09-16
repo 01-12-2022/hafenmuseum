@@ -4,10 +4,10 @@ import resourcesToBackend from 'i18next-resources-to-backend';
 import { i18nConfig } from '../i18nConfig';
 
 export default async function initTranslations(
-    locale: any,
-    namespaces: any,
-    i18nInstance?: any,
-    resources?: any
+    locale,
+    namespaces,
+    i18nInstance = undefined,
+    resources = undefined
 ) {
     i18nInstance = i18nInstance || createInstance();
 
@@ -16,7 +16,7 @@ export default async function initTranslations(
     if (!resources) {
         i18nInstance.use(
             resourcesToBackend(
-                (language: any, namespace: any) =>
+                (language, namespace) =>
                     import(`@/locales/${language}/${namespace}.json`)
             )
         );
