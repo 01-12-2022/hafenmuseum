@@ -1,0 +1,338 @@
+.html {
+    --primary: #e40046;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom-width: 1px;
+    height: 4rem;
+    background-color: #f3f4f6;
+
+
+    @media (min-width: 1024px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.museumIconTopLeftContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.museumIconTopLeft {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #e40046;
+}
+
+.museumIconTopLeftText {
+    font-weight: 700;
+    color: #e40046;
+    /* color: var(--primary); */
+}
+
+.navBar {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    @media (min-width: 640px) {
+        gap: 1.5rem;
+    }
+}
+
+.navBarItem {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-underline-offset: 4px;
+    color: #e40046;
+}
+
+.mainSection {
+    flex: 1 1 0%;
+}
+
+.infoSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    background-color: #00000000;
+
+
+    @media (min-width: 768px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    @media (min-width: 1280px) {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+    }
+}
+
+.infoSectionSubContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: 768px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.infoSectionImage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 70%;
+}
+
+.welcomeContainer {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #00000011;
+    border-radius: '25%';
+    width: auto;
+}
+
+.welcomeTextContainer {
+    margin-top: 0.5rem;
+}
+
+.welcomeText {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    text-shadow: #000000;
+
+    @media (min-width: 640px) {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    @media (min-width: 1024px) {}
+
+}
+
+.discoverUsText {
+    color: #D1D5DB;
+    max-width: 700px;
+
+    @media (min-width: 768px) {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+
+.toursSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%;
+    background-color: #F3F4F6;
+
+
+    @media (min-width: 768px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+.toursContainer {
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+    @media (min-width: 768px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.toursHeaderText {
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    text-align: center;
+    color: #000000;
+
+    @media (min-width: 640px) {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+.toursDescription {
+    margin-bottom: 3rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-align: center;
+    color: #6B7280;
+}
+
+.tourCardsContainer {
+    display: grid;
+    gap: 1.5rem;
+
+    @media (min-width: 640px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+.learnMoreSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    width: 100%;
+
+
+    @media (min-width: 768px) {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    @media (min-width: 1024px) {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+.learnMoreContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+    @media (min-width: 768px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.learnMoreSubContainer {
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.learnMoreTextContainer {
+    margin-top: 0.5rem;
+}
+
+.learnMoreHeaderText {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+
+    @media (min-width: 640px) {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+.learnMoreDescription {
+    color: #6B7280;
+    max-width: 600px;
+
+
+    @media (min-width: 768px) {}
+
+    @media (min-width: 1024px) {}
+
+    @media (min-width: 1280px) {}
+}
+
+.footer {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    flex-direction: column;
+    shrink: 0;
+    gap: 0.5rem;
+    align-items: center;
+    border-top-width: 1px;
+    width: 100%;
+
+    @media (min-width: 640px) {
+        flex-direction: row;
+    }
+
+    @media (min-width: 768px) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.footerCopyright {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: #6B7280;
+}
+
+.footerNavBar {
+    display: flex;
+    gap: 1rem;
+
+    @media (min-width: 640px) {
+        gap: 1.5rem;
+    }
+
+}
+
+.footerNavBarItem {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-underline-offset: 4px;
+
+    /* :hover {
+        text-decoration: underline;
+    } */
+}

@@ -1,4 +1,4 @@
-import { MuseumLandingPageComponent } from "@/components/museum-landing-page";
+import { MuseumLandingPageComponent } from "@/app/[locale]/MuseumLandingPage";
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider';
 
