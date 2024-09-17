@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
+import Image from 'next/image'
 
 export const InfoSection = ({ t }: LandingComponentProps) => {
     return (<section className={styles.infoSection}>
@@ -17,8 +18,9 @@ export const InfoSection = ({ t }: LandingComponentProps) => {
                 <Button variant="outline">{t('std:learn_more')}</Button>
             </div>
         </div>
-        <img
+        <Image
             className={styles.infoSectionImage}
+            alt="Hafenmuseum-Hintergrundbild"
             src={"/hafenmuseum_backdrop.jpg"}
         />
     </section>)

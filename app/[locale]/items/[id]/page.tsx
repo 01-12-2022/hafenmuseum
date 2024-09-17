@@ -1,17 +1,13 @@
-// "use client"
-
-import ImageDisplay from "./imageDisplay"
-import testdata from "./testdata"
 import { getSingleItemFromId } from "@/app/db/items_db"
+import Image from 'next/image'
 
 const ItemPage = async ({ params }: { params: { id: string } }) => {
-
     const item = await getSingleItemFromId(+params.id)
 
     return (
         <div>
             <div>ItemPage for {params.id}</div>
-            <img
+            <Image
                 src={item.image.toString()}
                 alt={`Bild vom Angezeigten Item`}
             />

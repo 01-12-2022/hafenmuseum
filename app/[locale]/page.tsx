@@ -4,8 +4,9 @@ import TranslationsProvider from '@/components/TranslationsProvider';
 
 const i18nNamespaces = ['home', 'std', 'jana'];
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Home({ params: { locale } }: { params: any }) {
-  const { t, resources } = await initTranslations(locale, i18nNamespaces);
+  const { resources } = await initTranslations(locale, i18nNamespaces);
 
   const tours = ['worker', 'sailor'];
 

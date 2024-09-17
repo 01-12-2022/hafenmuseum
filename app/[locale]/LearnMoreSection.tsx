@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
 
-export const LearnMoreSection = ({ t }: LandingComponentProps) => {
+export const LearnMoreSection = ({ }: LandingComponentProps) => {
     return (<section className={styles.learnMoreSection}>
         <div className={styles.learnMoreContainer}>
             <div className={styles.learnMoreSubContainer}>
