@@ -1,11 +1,12 @@
 'use client'
 
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Clock, MapPin, Info } from "lucide-react"
+import { MapPin } from "lucide-react"
+import Link from "next/link"
 import { useTranslation } from "react-i18next"
 import TourCard from "./TourCards"
+import styles from "./styles.module.css"
+
 type MuseumLandingPageProps = {
   tours: string[]
 }
@@ -13,7 +14,7 @@ export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className={styles.container}>
       <header className="px-4 lg:px-6 h-16 flex items-center justify-between border-b">
         <Link className="flex items-center justify-center" href="#">
           <MapPin className="h-6 w-6 mr-2" />
@@ -47,6 +48,10 @@ export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
               <Button variant="outline">{t('std:learn_more')}</Button>
             </div>
           </div>
+          <img
+            style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: 'auto', overflow: 'hidden', zIndex: -1, opacity: '70%' }}
+            src={"/hafenmuseum_backdrop.jpg"}
+          />
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
@@ -99,6 +104,7 @@ export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
           </Link>
         </nav>
       </footer>
-    </div>
+    </div >
   )
 }
+
