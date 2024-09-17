@@ -5,16 +5,19 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Clock, MapPin, Info } from "lucide-react"
 import { useTranslation } from "react-i18next"
-
-export function MuseumLandingPageComponent() {
-  const {t} = useTranslation();
+import TourCard from "./TourCards"
+type MuseumLandingPageProps = {
+  tours: string[]
+}
+export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-16 flex items-center justify-between border-b">
         <Link className="flex items-center justify-center" href="#">
           <MapPin className="h-6 w-6 mr-2" />
-          <span className="font-bold">{t('museumname')}</span>
+          <span className="font-bold">{t('std:museumname')}</span>
         </Link>
         <nav className="flex items-center gap-4 sm:gap-6">
           <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
@@ -35,71 +38,38 @@ export function MuseumLandingPageComponent() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  Explore Our City's Rich History
+                  {t('welcome')}
                 </h1>
                 <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                  Discover our museum at your own pace with our self-guided tours.
+                  {t('discover_us')}
                 </p>
               </div>
-              <Button variant="outline">Learn More</Button>
+              <Button variant="outline">{t('std:learn_more')}</Button>
             </div>
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4">Self-Guided Tours</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-4 text-black">{t('tours_header')}</h2>
             <p className="text-xl text-center text-gray-500 mb-12">
-              Choose your path and explore at your own pace. These routes are available to all museum visitors.
+              {t('tours_desc')}
             </p>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Ancient Civilizations</CardTitle>
-                  <CardDescription>Journey through the cradle of civilization</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    <span>Estimated time: 2 hours</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mt-2">
-                    <Info className="w-4 h-4" />
-                    <span>Includes audio guide</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Renaissance Art</CardTitle>
-                  <CardDescription>Discover the beauty of Renaissance masterpieces</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    <span>Estimated time: 1.5 hours</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mt-2">
-                    <Info className="w-4 h-4" />
-                    <span>Includes detailed artwork descriptions</span>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Modern Innovations</CardTitle>
-                  <CardDescription>Explore the inventions that shaped our world</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
-                    <Clock className="w-4 h-4" />
-                    <span>Estimated time: 2.5 hours</span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mt-2">
-                    <Info className="w-4 h-4" />
-                    <span>Interactive exhibits included</span>
-                  </div>
-                </CardContent>
-              </Card>
+
+              {tours.map((tour, index) => (
+                <TourCard
+                  key={index}
+                  title={t(`${tour}_title`)}
+                  description={t(`${tour}_desc`)}
+                  info={t(`${tour}_info`)}
+                  timeEstimation={t(`${tour}_time`)}
+                />
+              ))}
+
+              {/* Worker Story  */}
+
+
+
             </div>
           </div>
         </section>
@@ -109,7 +79,7 @@ export function MuseumLandingPageComponent() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Enhance Your Visit</h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our self-guided tours are designed to give you the freedom to explore at your own pace. 
+                  Our self-guided tours are designed to give you the freedom to explore at your own pace.
                   Pick up a map at the information desk to start your journey.
                 </p>
               </div>
