@@ -6,27 +6,20 @@ import { getSingleItemFromId } from "@/app/db/items_db"
 
 const ItemPage = async ({ params }: { params: { id: string } }) => {
 
-    const item = getItem(params.id)
-    const test = await getSingleItemFromId(+params.id)
+    const item = await getSingleItemFromId(+params.id)
 
     return (
         <div>
             <div>ItemPage for {params.id}</div>
-            {/* <ImageDisplay
-                image={item.image}
-                alt="Henning Klaffke-Bild"
-            /> */}
-            <div />
-            <h2>Name: {test.name}</h2>
+            <img
+                src={item.image.toString()}
+                alt={`Bild vom Angezeigten Item`}
+            />
+            <h2>Name: {item.name}</h2>
             <h2>Description: </h2>
-            <div>{test.description}</div>
-            {/* <div>{JSON.stringify(test, null, 3)}</div> */}
+            <div>{item.description}</div>
         </div>
     )
 }
 
 export default ItemPage
-
-const getItem = (id: string) => {
-    return testdata
-}
