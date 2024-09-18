@@ -1,14 +1,13 @@
 import { MuseumLandingPageComponent } from "@/app/[locale]/MuseumLandingPage";
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider';
+import { PageProps, tours } from "../constants";
 
-const i18nNamespaces = ['home', 'std', 'navbar'];
+const i18nNamespaces = ['home', 'std', 'navbar', 'tours'];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default async function Home({ params: { locale } }: { params: any }) {
+export default async function Home({ params: { locale } }: PageProps) {
   const { resources } = await initTranslations(locale, i18nNamespaces);
-
-  const tours = ['worker', 'sailor'];
 
   return (
     <TranslationsProvider
@@ -16,7 +15,7 @@ export default async function Home({ params: { locale } }: { params: any }) {
       locale={locale}
       resources={resources}>
       <main>
-        <MuseumLandingPageComponent tours={tours} />
+        <MuseumLandingPageComponent locale={locale} />
       </main>
     </TranslationsProvider>
   );

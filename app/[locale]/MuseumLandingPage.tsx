@@ -1,25 +1,21 @@
 'use client'
 
-import { TFunction } from "i18next"
 import { ReactNode } from "react"
 import { useTranslation } from "react-i18next"
-import TourCard from "../../components/TourCards"
-import styles from "./styles.module.css"
+import TourCard from "../../components/TourCard"
+import { tours, TranslatorType } from "../constants"
 import { InfoSection } from "./InfoSection"
 import { LandingFooter } from "./LandingFooter"
 import { LandingHeader } from "./LandingHeader"
 import { LearnMoreSection } from "./LearnMoreSection"
+import styles from "./styles.module.css"
 import { TourSection } from "./TourSection"
-import { InfoIcon } from "lucide-react"
 
 export type LandingComponentProps = {
-  t: TFunction<"translation", undefined>,
+  t: TranslatorType
   children?: ReactNode
 }
-type MuseumLandingPageProps = {
-  tours: string[]
-}
-export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
+export function MuseumLandingPageComponent({ locale }: { locale: any }) {
   const { t } = useTranslation();
 
   return (
@@ -34,13 +30,11 @@ export function MuseumLandingPageComponent({ tours }: MuseumLandingPageProps) {
           {tours.map((tour, index) => (
             <TourCard
               key={index}
-              title={t(`${tour}_title`)}
-              description={t(`${tour}_desc`)}
-              info={t(`${tour}_info`)}
-              timeEstimation={t(`${tour}_time`)}
+              tourName={tour}
+              locale={locale}
             />
           ))}
-          
+
         </TourSection>
         <LearnMoreSection t={t} />
       </main>
