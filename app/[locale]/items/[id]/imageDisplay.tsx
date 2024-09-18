@@ -7,11 +7,9 @@ type ImageDisplayProps = {
 const ImageDisplay = ({ image, alt }: ImageDisplayProps) => {
     return (
         <div>
-            <Image
+            <img
                 src={image}
                 alt={alt}
-                width={500}
-                height={600}
             />
             <div>{image}</div>
         </div>

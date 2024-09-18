@@ -1,5 +1,4 @@
 import { getSingleItemFromId } from "@/app/db/items_db"
-import Image from 'next/image'
 
 const ItemPage = async ({ params }: { params: { id: string } }) => {
     const item = await getSingleItemFromId(+params.id)
@@ -7,7 +6,7 @@ const ItemPage = async ({ params }: { params: { id: string } }) => {
     return (
         <div>
             <div>ItemPage for {params.id}</div>
-            <Image
+            <img
                 src={item.image.toString()}
                 alt={`Bild vom Angezeigten Item`}
             />
