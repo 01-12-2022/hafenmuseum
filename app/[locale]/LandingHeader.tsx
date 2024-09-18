@@ -13,15 +13,15 @@ export const LandingHeader = ({ t }: LandingComponentProps) => {
             </Link>
             <nav className={styles.navBar}>
                 <Link className={styles.navBarItem} href="#">
-                    Home
+                    {t('navbar:home')}
                 </Link>
                 <Link className={styles.navBarItem} href="#">
-                    Exhibitions
+                    {t('navbar:exhibitions')}
                 </Link>
                 <Link className={styles.navBarItem} href="#">
-                    Visit
+                    {t('navbar:tours')}
                 </Link>
-                <Button size="sm">Buy Ticket</Button>
+                <Button size="sm">{t('navbar:buyTicket')}</Button>
             </nav>
         </>
     )

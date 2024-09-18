@@ -2,7 +2,7 @@ import { MuseumLandingPageComponent } from "@/app/[locale]/MuseumLandingPage";
 import initTranslations from '@/app/i18n'
 import TranslationsProvider from '@/components/TranslationsProvider';
 
-const i18nNamespaces = ['home', 'std', 'jana'];
+const i18nNamespaces = ['home', 'std', 'navbar'];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default async function Home({ params: { locale } }: { params: any }) {
