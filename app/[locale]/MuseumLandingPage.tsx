@@ -10,6 +10,7 @@ import { LandingFooter } from "./LandingFooter"
 import { LandingHeader } from "./LandingHeader"
 import { LearnMoreSection } from "./LearnMoreSection"
 import { TourSection } from "./TourSection"
+import { InfoIcon } from "lucide-react"
 
 export type LandingComponentProps = {
   t: TFunction<"translation", undefined>,
