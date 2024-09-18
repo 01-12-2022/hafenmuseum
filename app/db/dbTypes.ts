@@ -1,10 +1,17 @@
-export type Item = {
+export type ItemTable = {
     id: string,
     name: string,
     description: string
 }
 
-export type Route = {
+export type RouteTable = {
     route_id: string
     testdata_id: string
+}
+
+export type Item = {
+    id: number,
+    name: string,
+    description: string,
+    image: Buffer
 }

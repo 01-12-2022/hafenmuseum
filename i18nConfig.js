@@ -1,4 +1,4 @@
 export const i18nConfig = {
-  locales: ["de","en","ru","pl", "tr"],
+  locales: ["de","en","ru","zh", "tr", "fi"],
   defaultLocale: 'de'
 };
