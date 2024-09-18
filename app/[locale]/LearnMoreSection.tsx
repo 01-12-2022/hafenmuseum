@@ -2,18 +2,17 @@ import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
 
-export const LearnMoreSection = ({ }: LandingComponentProps) => {
+export const LearnMoreSection = ({ t }: LandingComponentProps) => {
     return (<section className={styles.learnMoreSection}>
         <div className={styles.learnMoreContainer}>
             <div className={styles.learnMoreSubContainer}>
                 <div className={styles.learnMoreTextContainer}>
-                    <h2 className={styles.learnMoreHeaderText}>Enhance Your Visit</h2>
+                    <h2 className={styles.learnMoreHeaderText}>{t('home:enhance_stay')}</h2>
                     <p className={styles.learnMoreDescription}>
-                        Our self-guided tours are designed to give you the freedom to explore at your own pace.
-                        Pick up a map at the information desk to start your journey.
+                        {t('home:enhance_info')}
                     </p>
                 </div>
-                <Button variant="outline" size="lg">View Museum Map</Button>
+                <Button variant="outline" size="lg">{t('home:view_map')}</Button>
             </div>
         </div>
     </section>)
