@@ -70,7 +70,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     width: 100%;
-    background-color: #00000000;
+    background-color: #00000003;
 
 
     @media (min-width: 768px) {
@@ -104,10 +104,9 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: auto;
+    height: inherit;
     overflow: hidden;
     z-index: -1;
-    opacity: 70%;
 }
 
 .welcomeContainer {
@@ -116,9 +115,6 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #00000011;
-    border-radius: '25%';
-    width: auto;
 }
 
 .welcomeTextContainer {
@@ -131,7 +127,6 @@
     font-weight: 700;
     letter-spacing: -0.05em;
     color: #ffffff;
-    text-shadow: #000000;
 
     @media (min-width: 640px) {
         font-size: 2.25rem;
