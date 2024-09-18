@@ -1,27 +1,29 @@
 import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
+import { Card } from "@/components/ui/card"
 
 
 export const InfoSection = ({ t }: LandingComponentProps) => {
-    return (<section className={styles.infoSection}>
-        <div className={styles.infoSectionSubContainer}>
-            <div className={styles.welcomeContainer}>
-                <div className={styles.welcomeTextContainer}>
-                    <h1 className={styles.welcomeText}>
-                        {t('welcome')}
-                    </h1>
-                    <p className={styles.discoverUsText}>
-                        {t('discover_us')}
-                    </p>
-                </div>
-                <Button variant="outline">{t('std:learn_more')}</Button>
+    return (
+        <section className={styles.infoSection}>
+            <div className={styles.infoSectionSubContainer}>
+                <Card className={styles.welcomeContainer}>
+                    <div className={styles.welcomeTextContainer}>
+                        <h1 className={styles.welcomeText}>
+                            {t('welcome')}
+                        </h1>
+                        <p className={styles.discoverUsText}>
+                            {t('discover_us')}
+                        </p>
+                    </div>
+                    <Button style={{color: '#ffffff'}} variant="outline">{t('std:learn_more')}</Button>
+                </Card>
             </div>
-        </div>
-        <img
-            className={styles.infoSectionImage}
-            alt="Hafenmuseum-Hintergrundbild"
-            src={"/hafenmuseum_backdrop.jpg"}
-        />
-    </section>)
+            <img
+                className={styles.infoSectionImage}
+                alt="Hafenmuseum-Hintergrundbild"
+                src={"/hafenmuseum_backdrop.jpg"}
+            />
+        </section>)
 }

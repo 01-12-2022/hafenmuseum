@@ -117,10 +117,18 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    background-color: #000000dd;
+    border-color: #00000000;
+    gap: 10px;
 }
 
 .welcomeTextContainer {
     margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
 .welcomeText {
