@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { jgborders } from "@/lib/utils"
 
 type ImageDisplayProps = {
     image: string,
@@ -6,12 +6,11 @@ type ImageDisplayProps = {
 }
 const ImageDisplay = ({ image, alt }: ImageDisplayProps) => {
     return (
-        <div>
+        <div style={{width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
             <img
                 src={image}
                 alt={alt}
             />
-            <div>{image}</div>
         </div>
     )
 }
