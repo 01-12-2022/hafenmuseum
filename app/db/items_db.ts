@@ -1,7 +1,9 @@
 import { RowDataPacket } from "mysql2"
 import { createConnection } from "./db"
+import { Item } from "./dbTypes"
 
-export async function getSingleItemFromId(id: number) {
+
+export async function getSingleItemFromId(id: number): Promise<Item> {
     const connection = await createConnection()
 
     const query = `select 
@@ -17,5 +19,10 @@ export async function getSingleItemFromId(id: number) {
     const data = (await connection.query<RowDataPacket[]>(query, values))[0]
     await connection.end()
 
-    return data[0]
+    return {
+        id: data[0].id,
+        description: data[0].description,
+        image: data[0].image,
+        name: data[0].name
+    }
 }
