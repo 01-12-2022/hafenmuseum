@@ -15,7 +15,7 @@ export default async function Home({ params: { locale } }: PageProps) {
       locale={locale}
       resources={resources}>
       <main>
-        <MuseumLandingPageComponent locale={locale} />
+        <MuseumLandingPageComponent />
       </main>
     </TranslationsProvider>
   );
