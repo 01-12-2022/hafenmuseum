@@ -12,7 +12,13 @@ const ItemCard = async ({ itemId, locale, route }: { itemId: number, locale: any
 
     return (<Card>
         <Link href={`/items/${itemId}${(!!route) ? `?route=${route}` : ""}`}>
-            <CardHeader>{t(item.name)}</CardHeader>
+            <CardHeader>
+                <img
+                    style={{ width: 30 }}
+                    src={item.image?.toString()}
+                    alt="test" />
+                <p>{t(item.name)}</p>
+            </CardHeader>
             <CardDescription>{t(item.description)}</CardDescription>
         </Link>
     </Card>)

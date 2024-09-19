@@ -2,22 +2,10 @@ import { RowDataPacket } from "mysql2";
 import { createConnection } from "./db";
 import { Item, TourStop } from "./dbTypes";
 
-export async function getNextItemIdForRouteOrNull(item: Item, routeKey: string | null | undefined) {
-    console.log("in nextid, ", item, routeKey)
+export async function getStopsForTour(routeKey?: string): Promise<TourStop[]> {
     if (!routeKey)
-        return null
+        return []
 
-    const stops = await getStopsForTour(routeKey)
-
-    const indexOfStop = stops.findIndex(t => t.itemId == item.id)
-    console.log("index: ", indexOfStop)
-
-    if (indexOfStop + 1 >= stops.length)
-        return null
-    return stops[indexOfStop + 1].itemId
-}
-
-export async function getStopsForTour(routeKey: string): Promise<TourStop[]> {
     const connection = await createConnection()
 
     const routeStopsQuery = `select 
