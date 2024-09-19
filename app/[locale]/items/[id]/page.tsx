@@ -26,7 +26,7 @@ const ItemPage = async ({ params, searchParams }: PageProps<{ id: string }>) => 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {/* <div>ItemPage for {params.id}</div> */}
                 <ImageDisplay
-                    image={item.image.toString()}
+                    image={item.image?.toString()}
                     alt={"Image"}
                 />
                 <ItemNameDisplay name={item.name} />
