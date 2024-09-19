@@ -39,7 +39,7 @@ export default async function RootLayout({
         <link rel='shortcut icon' href='/favicon.ico'/>
       </Head> 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         <TranslationsProvider
           resources={resources}
