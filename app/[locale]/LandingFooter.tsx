@@ -6,10 +6,10 @@ export const LandingFooter = ({ t }: LandingComponentProps) => {
     return (<>
         <p className={styles.footerCopyright}>{t('std:copyright')}</p>
         <nav className={styles.footerNavBar}>
-            <Link className={styles.footerNavBarItem} href="#">
+            <Link className={styles.footerNavBarItem} href="/youThought">
                 {t('std:tos')}
             </Link>
-            <Link className={styles.footerNavBarItem} href="#">
+            <Link className={styles.footerNavBarItem} href="/youThought">
                 {t('std:privacy')}
             </Link>
         </nav>
