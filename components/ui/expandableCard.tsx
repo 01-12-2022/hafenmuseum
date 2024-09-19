@@ -1,9 +1,8 @@
 "use client"
 
 import { Card } from '@/components/ui/card'
-import { ReactNode, useState } from 'react'
 import { ArrowDown, ArrowUp } from 'lucide-react'
-import { jgborders } from '@/lib/utils'
+import { ReactNode, useState } from 'react'
 
 type ExpandableCardProps = {
     icon?: ReactNode

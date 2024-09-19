@@ -1,9 +1,9 @@
+import TranslationsProvider from "@/components/TranslationsProvider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import initTranslations from "../i18n";
 import "./globals.css";
 import { NavBar } from "./Header";
-import initTranslations from "../i18n";
-import TranslationsProvider from "@/components/TranslationsProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,9 +28,9 @@ export default async function RootLayout({
   params
 }: Readonly<{
   children: React.ReactNode;
-  params: any
+  params: { locale: string }
 }>) {
-  const { t, resources } = await initTranslations(params.locale, namespaces)
+  const { resources } = await initTranslations(params.locale, namespaces)
   return (
     <html lang="en">
       <head>

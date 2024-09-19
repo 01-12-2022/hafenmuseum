@@ -6,7 +6,6 @@ import TourCard from "../../components/TourCard"
 import { tours, TranslatorType } from "../constants"
 import { InfoSection } from "./InfoSection"
 import { LandingFooter } from "./LandingFooter"
-import { NavBar } from "./Header"
 import { LearnMoreSection } from "./LearnMoreSection"
 import styles from "./styles.module.css"
 import { TourSection } from "./TourSection"
@@ -15,7 +14,7 @@ export type LandingComponentProps = {
   t: TranslatorType
   children?: ReactNode
 }
-export function MuseumLandingPageComponent({ locale }: { locale: any }) {
+export function MuseumLandingPageComponent() {
   const { t } = useTranslation();
 
   return (
@@ -28,7 +27,6 @@ export function MuseumLandingPageComponent({ locale }: { locale: any }) {
             <TourCard
               key={index}
               tourName={tour}
-              locale={locale}
             />
           ))}
 

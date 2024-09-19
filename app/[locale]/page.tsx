@@ -1,7 +1,7 @@
 import { MuseumLandingPageComponent } from "@/app/[locale]/MuseumLandingPage";
-import initTranslations from '@/app/i18n'
+import initTranslations from '@/app/i18n';
 import TranslationsProvider from '@/components/TranslationsProvider';
-import { PageProps, tours } from "../constants";
+import { PageProps } from "../constants";
 
 const i18nNamespaces = ['home', 'std', 'navbar', 'tours'];
 

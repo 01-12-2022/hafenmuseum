@@ -2,11 +2,10 @@
 import { Button } from "@/components/ui/button"
 import { MapPin, PanelTopCloseIcon, PanelTopOpenIcon } from "lucide-react"
 import Link from "next/link"
-import { HAFENMUSEUM_URL } from "../constants"
-import { LandingComponentProps } from "./MuseumLandingPage"
-import styles from "./styles.module.css"
-import { useTranslation } from "react-i18next"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
+import { HAFENMUSEUM_URL } from "../constants"
+import styles from "./styles.module.css"
 
 export const NavBar = () => {
     const { t } = useTranslation()

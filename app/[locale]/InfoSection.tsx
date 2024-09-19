@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button"
-import { LandingComponentProps } from "./MuseumLandingPage"
-import styles from "./styles.module.css"
 import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
+import { LandingComponentProps } from "./MuseumLandingPage"
+import styles from "./styles.module.css"
 
 export const InfoSection = ({ t }: LandingComponentProps) => {
     const router = useRouter()

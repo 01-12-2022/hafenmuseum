@@ -1,6 +1,6 @@
 import { RowDataPacket } from "mysql2";
 import { createConnection } from "./db";
-import { Item, TourStop } from "./dbTypes";
+import { TourStop } from "./dbTypes";
 
 export async function getStopsForTour(routeKey?: string): Promise<TourStop[]> {
     if (!routeKey)

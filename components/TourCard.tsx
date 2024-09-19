@@ -1,19 +1,16 @@
 "use client"
 
 import { Clock, Info } from 'lucide-react'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
 
 
 type TourCardProps = {
     tourName: string,
-    locale: any
 }
-const TourCard = ({ tourName, locale }: TourCardProps) => {
+const TourCard = ({ tourName }: TourCardProps) => {
     const { t } = useTranslation();
-    const router = useRouter();
 
     return (
         <Card>
