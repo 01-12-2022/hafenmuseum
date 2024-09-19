@@ -7,13 +7,13 @@ import styles from "./styles.module.css"
 
 export const LandingHeader = ({ t }: LandingComponentProps) => {
     return (
-        <>
-            <Link className={styles.museumIconTopLeftContainer} href="#">
+        <header className={styles.header}>
+            <Link className={styles.museumIconTopLeftContainer} href="/">
                 <MapPin className={styles.museumIconTopLeft} />
                 <span className={styles.museumIconTopLeftText}>{t('std:museumname')}</span>
             </Link>
             <nav className={styles.navBar}>
-                <Link className={styles.navBarItem} href="#">
+                <Link className={styles.navBarItem} href="/">
                     {t('navbar:home')}
                 </Link>
                 <Link className={styles.navBarItem} href="/items">
@@ -26,6 +26,6 @@ export const LandingHeader = ({ t }: LandingComponentProps) => {
                     <Button size="sm">{t('navbar:buyTicket')}</Button>
                 </Link>
             </nav>
-        </>
+        </header>
     )
 }

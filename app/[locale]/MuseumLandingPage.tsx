@@ -20,9 +20,6 @@ export function MuseumLandingPageComponent({ locale }: { locale: any }) {
 
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <LandingHeader t={t} />
-      </header>
       <main className={styles.mainSection}>
         <InfoSection t={t} />
         <TourSection t={t}>
