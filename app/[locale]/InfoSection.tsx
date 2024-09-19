@@ -10,7 +10,7 @@ export const InfoSection = ({ t }: LandingComponentProps) => {
     return (
         <section className={styles.infoSection}>
             <div className={styles.infoSectionSubContainer}>
-                <Card className={styles.welcomeContainer}>
+                <Card style={{backgroundColor: '#0d0d0dc0'}} className={styles.welcomeContainer}>
                     <div className={styles.welcomeTextContainer}>
                         <h1 className={styles.welcomeText}>
                             {t('welcome')}

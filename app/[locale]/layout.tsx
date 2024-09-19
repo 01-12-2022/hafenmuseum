@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import initTranslations from "../i18n";
 import "./globals.css";
 import { NavBar } from "./Header";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,9 +34,10 @@ export default async function RootLayout({
   const { resources } = await initTranslations(params.locale, namespaces)
   return (
     <html lang="en">
-      <head>
+      <Head>
         <title>Deutsches Hafenmuseum</title>
-      </head>
+        <link rel='shortcut icon' href='/favicon.ico'/>
+      </Head> 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
