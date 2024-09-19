@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { LandingHeader } from "./LandingHeader";
+import { NavBar } from "./Header";
 import initTranslations from "../i18n";
 import TranslationsProvider from "@/components/TranslationsProvider";
 
@@ -45,7 +45,7 @@ export default async function RootLayout({
           namespaces={namespaces}
         >
           <div>
-            <LandingHeader t={t} />
+            <NavBar />
           </div>
         </TranslationsProvider>
         {children}

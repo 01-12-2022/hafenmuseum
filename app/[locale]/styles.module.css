@@ -9,13 +9,10 @@
 }
 
 .header {
-    display: flex;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
     justify-content: space-between;
     align-items: center;
     border-bottom-width: 1px;
-    height: 4rem;
     background-color: #f3f4f6dd;
 
 
