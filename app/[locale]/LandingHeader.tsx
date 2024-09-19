@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { MapPin } from "lucide-react"
 import Link from "next/link"
-import styles from "./styles.module.css"
+import { HAFENMUSEUM_URL } from "../constants"
 import { LandingComponentProps } from "./MuseumLandingPage"
+import styles from "./styles.module.css"
 
 export const LandingHeader = ({ t }: LandingComponentProps) => {
     return (
@@ -21,7 +22,9 @@ export const LandingHeader = ({ t }: LandingComponentProps) => {
                 <Link className={styles.navBarItem} href="/tours">
                     {t('navbar:tours')}
                 </Link>
-                <Button size="sm">{t('navbar:buyTicket')}</Button>
+                <Link href={HAFENMUSEUM_URL}>
+                    <Button size="sm">{t('navbar:buyTicket')}</Button>
+                </Link>
             </nav>
         </>
     )

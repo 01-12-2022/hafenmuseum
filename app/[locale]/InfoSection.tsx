@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
 import { Card } from "@/components/ui/card"
-
+import { useRouter } from "next/navigation"
 
 export const InfoSection = ({ t }: LandingComponentProps) => {
+    const router = useRouter()
+
     return (
         <section className={styles.infoSection}>
             <div className={styles.infoSectionSubContainer}>
@@ -17,7 +19,7 @@ export const InfoSection = ({ t }: LandingComponentProps) => {
                             {t('discover_us')}
                         </p>
                     </div>
-                    <Button style={{color: '#ffffff'}} variant="outline">{t('std:learn_more')}</Button>
+                    <Button onClick={() => router.push("/tours")} style={{ color: '#ffffff' }} variant="outline">{t('std:learn_more')}</Button>
                 </Card>
             </div>
             <img

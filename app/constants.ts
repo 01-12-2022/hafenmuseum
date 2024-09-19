@@ -12,3 +12,5 @@ export type PageProps<T = void> = {
         route: string
     }
 }
+
+export const HAFENMUSEUM_URL = "https://www.shmh.de/deutsches-hafenmuseum/deutsches-hafenmuseum-besuchen/"
