@@ -1,18 +1,21 @@
 import { getSingleItemFromId } from "@/app/db/items_db"
-import ImageDisplay from "./imageDisplay"
-import { Item } from "@/app/db/dbTypes"
 import initTranslations from "@/app/i18n"
 import TranslationsProvider from "@/components/TranslationsProvider"
-import { useTranslation } from "react-i18next"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { ItemNameDisplay } from "./ItemNameDisplay"
+import ImageDisplay from "./imageDisplay"
 import { ItemDetailDisplay } from "./ItemDetailDisplay"
+import { ItemNameDisplay } from "./ItemNameDisplay"
+import { PageProps, tours } from "@/app/constants";
+import ItemRouteControldisplay from "./ItemRouteControlDisplay"
+import { getNextItemIdForRouteOrNull } from "@/app/db/route_db"
 
 const i18nNamespaces = ["items"]
 
-const ItemPage = async ({ params }: { params: { id: string, locale: any } }) => {
+const ItemPage = async ({ params, searchParams }: PageProps<{ id: string }>) => {
     const { t, resources } = await initTranslations(params.locale, i18nNamespaces);
     const item = await getSingleItemFromId(+params.id)
+
+    const nextId = await getNextItemIdForRouteOrNull(item, searchParams?.route)
+    console.log("next id: ", nextId)
 
     return (
         <TranslationsProvider
@@ -29,6 +32,9 @@ const ItemPage = async ({ params }: { params: { id: string, locale: any } }) => 
                 <ItemNameDisplay name={item.name} />
 
                 <ItemDetailDisplay item={item} />
+
+                <ItemRouteControldisplay nextId={nextId || undefined} route={searchParams?.route} item={item} />
+
             </div>
         </TranslationsProvider>
     )

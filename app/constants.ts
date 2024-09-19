@@ -7,5 +7,8 @@ export type TranslatorType = TFunction<"translation", undefined>;
 export type PageProps<T = void> = {
     params: T & {
         locale: any
+    },
+    searchParams?: {
+        route: string
     }
 }

@@ -15,3 +15,9 @@ export type Item = {
     description: string,
     image: Buffer
 }
+
+export type TourStop = {
+    routeId: number,
+    itemId: number,
+    stop: number
+}
