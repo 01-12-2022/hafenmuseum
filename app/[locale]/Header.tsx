@@ -13,7 +13,7 @@ export const NavBar = () => {
     const [showNavbar, setShowNavbar] = useState(false)
 
     return (
-        <header className={"flex justify-center fixed top-0 left-0 w-full p-4 bg-[#f3f4f6dd] border-b-1 sm:flex-col flex-col lg:flex-row"}>
+        <header className={"flex justify-center w-full p-4 bg-[#f3f4f6dd] border-b-1 sm:flex-col flex-col lg:flex-row"}>
             <div style={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-between' }}>
                 <Link style={{ width: 'auto' }} className={styles.museumIconTopLeftContainer} href="/">
                     <MapPin className={styles.museumIconTopLeft} />
@@ -26,17 +26,17 @@ export const NavBar = () => {
                     {showNavbar ? <PanelTopCloseIcon /> : <PanelTopOpenIcon />}
                 </div>
             </div>
-            <nav className={"flex gap-4 items-center flex-col lg:flex-row text-[#e40046]"}>
-                <Link className={`flex-1 justify-self-center pb-3 mt-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/">
+            <nav className={"flex lg:gap-4 items-center flex-col lg:flex-row text-[#e40046]"}>
+                <Link className={`flex-1 justify-self-center hover:text-white hover:underline pb-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/">
                     {t('navbar:home')}
                 </Link>
-                <Link className={`flex-1 justify-self-center pb-3 mt-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/items">
+                <Link className={`flex-1 justify-self-center hover:text-white hover:underline pb-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/items">
                     {t('navbar:exhibitions')}
                 </Link>
-                <Link className={`flex-1 justify-self-center pb-3 mt-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/tours">
+                <Link className={`flex-1 justify-self-center hover:text-white hover:underline pb-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href="/tours">
                     {t('navbar:tours')}
                 </Link>
-                <Link className={`flex-1 justify-self-center pb-3 mt-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href={HAFENMUSEUM_URL}>
+                <Link className={`flex-1 justify-self-center pb-3 md:block md:pb-0 md:mt-0 ${showNavbar ? 'p-3 md:p-0 block' : 'hidden'}`} href={HAFENMUSEUM_URL}>
                     <Button size="sm">{t('navbar:buyTicket')}</Button>
                 </Link>
             </nav>

@@ -44,9 +44,7 @@ export default async function RootLayout({
           locale={params.locale}
           namespaces={namespaces}
         >
-          <div>
-            <NavBar />
-          </div>
+          <NavBar />
         </TranslationsProvider>
         {children}
       </body>
