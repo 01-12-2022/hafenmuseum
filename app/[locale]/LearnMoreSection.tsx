@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button"
 import { LandingComponentProps } from "./MuseumLandingPage"
 import styles from "./styles.module.css"
+import { useRouter } from "next/navigation"
+import { HAFENMUSEUM_URL } from "../constants"
 
 export const LearnMoreSection = ({ t }: LandingComponentProps) => {
+    const router = useRouter()
+
     return (<section className={styles.learnMoreSection}>
         <div className={styles.learnMoreContainer}>
             <div className={styles.learnMoreSubContainer}>
@@ -12,7 +16,7 @@ export const LearnMoreSection = ({ t }: LandingComponentProps) => {
                         {t('home:enhance_info')}
                     </p>
                 </div>
-                <Button variant="outline" size="lg">{t('home:view_map')}</Button>
+                <Button onClick={() => router.push(HAFENMUSEUM_URL)} variant="outline" size="lg">{t('home:view_map')}</Button>
             </div>
         </div>
     </section>)
